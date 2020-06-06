@@ -1,0 +1,30 @@
+---
+title: "Assignment_2"
+author: "Gkal"
+date: "06/06/2020"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyr)
+library(leaflet)
+```
+
+## Royal Parks of London
+
+```{r, echo=FALSE, fig.align='centre'}
+R_Parks <- data.frame(name = c("Hyde Park", "Kensington Gardens", "Richmond Park", "Bushy Park", 
+                                 "St Jame's Park", "Green Park", "Regent's Park", "Greenwich Park", "Brompton Cemetery", "Victoria Tower Gardens"),
+                        
+                      lat= c(51.505164646, 51.503997984, 51.447, 51.407665036, 51.5025, 51.5025, 51.525997896, 51.47669, 51.4833314, 51.491498034),
+                        
+                      lng = c(-0.158166034, -0.187832582, -0.278, -0.336165322,  -0.143, -0.1414, -0.153999384, 0.00013, -0.186832586,  -0.12166618))
+
+
+R_Parks %>%
+  leaflet() %>%
+  addTiles() #%>%
+  #addCircles(weight = 20, color = 'red')
+```
